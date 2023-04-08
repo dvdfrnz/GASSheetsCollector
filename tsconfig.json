@@ -107,7 +107,7 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "typedocOptions": {
-    "entryPoints": ["src/*"],
+    "entryPoints": ["dist/*"],
     "out": "docs"
   }
 }
