@@ -8,6 +8,8 @@ const onOpen = () => {
     .addItem("Import Data", "menuItem1")
     .addSeparator()
     .addItem("Clear Sheet", "menuItem2")
+    .addSeparator()
+    .addItem("Add Trigger", "menuItem3")
     .addToUi();
 };
 
@@ -17,4 +19,9 @@ const menuItem1 = () => {
 
 const menuItem2 = () => {
   eraser();
+};
+
+const menuItem3 = () => {
+  createTimeTriggerSpecifcDate();
+  SpreadsheetApp.getUi().alert("Added Trigger");
 };
