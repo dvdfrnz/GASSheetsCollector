@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.59",
+    "dayjs": "^1.11.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "typedoc": "^0.23.28"
+  },
+  "scripts": {
+    "test": "jest ./tests/*",
+    "docs": "npx typedoc --name DataCollector"
+  }
+}
