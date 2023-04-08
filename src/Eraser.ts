@@ -1,5 +1,4 @@
 /**
- * @ts-check
  * Pencil function writes data to the active Spreadsheet
  */
 

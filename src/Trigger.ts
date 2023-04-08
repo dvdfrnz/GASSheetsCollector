@@ -1,14 +1,21 @@
 /**
- *
+ * Creates a trigger at given hour of the day for a specific script
+ * @param everyNthDay
+ * @param hourOfDay
+ * @param handlerFunction
+ * @todo Create conditional Trigger Creation
  * @returns
  */
-const createTimeTriggerSpecifcDate = (): object => {
-  let handlerFunction = "main";
+const createTimeTriggerSpecifcDate = (
+  everyNthDay: number = 1,
+  hourOfDay: number = 3,
+  handlerFunction: string = "main"
+): object => {
   if (!checkIfTriggerExists("CLOCK", handlerFunction)) {
     ScriptApp.newTrigger(handlerFunction)
       .timeBased()
-      .atHour(4)
-      .everyDays(2)
+      .atHour(hourOfDay)
+      .everyDays(everyNthDay)
       .create();
   }
   return {
@@ -39,4 +46,17 @@ const checkIfTriggerExists = (
       triggerExists = true;
   });
   return triggerExists;
+};
+/**
+ *
+ * @param removeAll
+ * @todo have to add condotional removal of triggers based on handlerfunction
+ */
+const removeAllTriggers = (removeAll: boolean = true) => {
+  var triggers = ScriptApp.getProjectTriggers();
+  if (removeAll) {
+    triggers.forEach((element) => {
+      ScriptApp.deleteTrigger(element);
+    });
+  }
 };
