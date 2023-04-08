@@ -1,17 +1,14 @@
 /**
- * Collector function that returns data range from Spreadsheet
- * @param {string} spreadSheetId - ID of Spreadsheet File
- * @param {string} sheetName - Name of the Sheet in Spreadsheet
  *
- * */
+ * @param folderId
+ * @returns
+ */
 
-const collector = (spreadSheetId: string, sheetName: string): any[] => {
+const looker = (folderId: string): any[] => {
+  let spreadsheetIds: any[] = [];
   try {
-    let data = SpreadsheetApp.openById(spreadSheetId)
-      .getSheetByName(sheetName)
-      .getDataRange()
-      .getValues();
-    return data;
+    let data = SpreadsheetApp.openById(folderId);
+    spreadsheetIds.push(data);
   } catch (error) {
     return [JSON.stringify(error)];
   }

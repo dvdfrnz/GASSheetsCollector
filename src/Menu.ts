@@ -5,23 +5,10 @@
 const onOpen = () => {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu("Data Collector")
-    .addItem("Import Data", "menuItem1")
+    .addItem("Import Data", "main")
     .addSeparator()
-    .addItem("Clear Sheet", "menuItem2")
+    .addItem("Clear Sheet", "eraser")
     .addSeparator()
-    .addItem("Add Trigger", "menuItem3")
+    .addItem("Add Trigger", "createTimeTriggerSpecifcDate")
     .addToUi();
-};
-
-const menuItem1 = () => {
-  main();
-};
-
-const menuItem2 = () => {
-  eraser();
-};
-
-const menuItem3 = () => {
-  createTimeTriggerSpecifcDate();
-  SpreadsheetApp.getUi().alert("Added Trigger");
 };
