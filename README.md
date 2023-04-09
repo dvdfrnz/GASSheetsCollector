@@ -2,7 +2,7 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![AGPL License](https://img.shields.io/badge/License-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
-# GAS Sheet Collector Project
+# GAS Sheet Collector
 
 A brief description of what this project does and who it's for
 
@@ -24,9 +24,15 @@ Install dependencies and get going
   npm run docs
 ```
 
-## Authors
+Setup your Clasp ".clasp.json" File in your Project Directory:
 
-> [@dvdfrnz](hhttps://github.com/dvdfrnz)
+```json
+{
+  "scriptId": <Script ID>,
+  "rootDir": <Root Directory of your Project>,
+  "parentId": [<IDs of Parent Files>]
+}
+```
 
 ## Appendix
 
