@@ -1,8 +1,21 @@
-describe("'add' utility", () => {
-  const testData = [1, 2, 3, 4, 5];
-  const expectedResult = 2;
-  test(`given ${testData[0]} and ${testData[2]} the result should be ${testData[3]}`, (testData) => {
-    const result = main();
-    expect(result).toEqual(expectedResult);
+describe("Test toCamelCase formatter: ", () => {
+  beforeEach(() => {
+    // Test setup code
+  });
+
+  it("No Change", () => {
+    expect(toCamelCase("test")).toBe("test");
+  });
+
+  it("Single Word Case", () => {
+    expect(toCamelCase("TeST")).toBe("test");
+  });
+
+  it("Two Words", () => {
+    expect(toCamelCase("test Me")).toBe("testMe");
+  });
+
+  it("Two Words Case", () => {
+    expect(toCamelCase("TEST ME")).toBe("testMe");
   });
 });

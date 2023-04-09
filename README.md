@@ -1,6 +1,11 @@
 # GAS - Sheet Collector
 
-A brief description of what this project does and who it's for
+the purpose of this project is to provide functionality to scrape Google Sheets from a given Drive Hierarchy and **Extract** specific data from them. They can then be **Transformed** and finally **Loaded** into another Google Sheet for further analysis.
+
+Many office activities in comprise manually finding, copying and pasting data from one
+place to another. These tasks can easily be automated with ETL functionality provided for the Google Workspace context.
+
+!!! This project is still in its infancy and very much under development.
 
 ## Installation
 
