@@ -4,10 +4,14 @@
  * @return Formatted String
  */
 export const toCamelCase = (str: string): string => {
-  return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => {
-    if (+match === 0) {
-      return ""; // Remove spaces and other separators
+  const words = str.split(/[_\s]+/);
+  const result = words.reduce((acc, word, index) => {
+    if (index === 0) {
+      acc.push(word.toLowerCase());
+    } else {
+      acc.push(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
     }
-    return index === 0 ? match.toLowerCase() : match.toUpperCase();
-  });
+    return acc;
+  }, [] as string[]);
+  return result.join("");
 };
