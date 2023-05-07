@@ -4,7 +4,7 @@
  * @returns Array of FileIds
  */
 
-const looker = (folderId: string): any[] => {
+export const looker = (folderId: string): any => {
   let spreadsheetIds: any[] = [];
   try {
     let data = SpreadsheetApp.openById(folderId);

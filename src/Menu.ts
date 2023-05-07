@@ -2,7 +2,7 @@
  * Menu Item on Spreadsheet
  */
 
-const onOpen = () => {
+export const onOpen = () => {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu("Data Collector")
     .addItem("Import Data", "main")

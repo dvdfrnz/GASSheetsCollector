@@ -1,21 +1,27 @@
+import { toCamelCase } from "../src/Helpers";
+
 describe("Test toCamelCase formatter: ", () => {
   beforeEach(() => {
     // Test setup code
   });
 
   it("No Change", () => {
-    expect(toCamelCase("test")).toBe("test");
+    expect(toCamelCase("Some Test String")).toBe("someTestString");
   });
 
   it("Single Word Case", () => {
-    expect(toCamelCase("TeST")).toBe("test");
+    expect(toCamelCase("Another")).toBe("another");
   });
 
-  it("Two Words", () => {
-    expect(toCamelCase("test Me")).toBe("testMe");
+  it("Multiple Words mixed Case", () => {
+    expect(toCamelCase("lorem Ipsum dolor Sit amet")).toBe(
+      "loremIpsumDolorSitAmet"
+    );
   });
 
-  it("Two Words Case", () => {
-    expect(toCamelCase("TEST ME")).toBe("testMe");
+  it("Multiple Words sames Case", () => {
+    expect(toCamelCase("lorem ipsum dolor sit amet")).toBe(
+      "loremIpsumDolorSitAmet"
+    );
   });
 });

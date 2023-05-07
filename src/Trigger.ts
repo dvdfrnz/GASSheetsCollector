@@ -6,7 +6,7 @@
  * @todo Create conditional Trigger Creation
  * @returns
  */
-const createTimeTriggerSpecifcDate = (
+export const createTimeTriggerSpecifcDate = (
   everyNthDay: number = 1,
   hourOfDay: number = 3,
   handlerFunction: string = "main"
@@ -32,7 +32,7 @@ const createTimeTriggerSpecifcDate = (
  * @returns
  */
 
-const checkIfTriggerExists = (
+export const checkIfTriggerExists = (
   eventType: any,
   handlerFunction: string
 ): boolean => {
@@ -52,7 +52,7 @@ const checkIfTriggerExists = (
  * @param removeAll
  * @todo have to add condotional removal of triggers based on handlerfunction
  */
-const removeAllTriggers = (removeAll: boolean = true) => {
+export const removeAllTriggers = (removeAll: boolean = true) => {
   var triggers = ScriptApp.getProjectTriggers();
   if (removeAll) {
     triggers.forEach((element) => {

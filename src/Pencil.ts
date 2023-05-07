@@ -5,15 +5,10 @@
  * @param sheetName
  */
 
-const pencil = (data: any[][], sheetName: string): boolean => {
-  let success: boolean = false;
-  let lastRow: number =
-    SpreadsheetApp.getActiveSpreadsheet()
-      .getSheetByName(sheetName)
-      .getLastRow() + 1;
-
+export const pencil = (data: any[][], sheetName: string) => {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+  const lastRow: any = sheet?.getLastRow();
   SpreadsheetApp.getActiveSheet()
-    .getRange(lastRow, 1, data.length, data[0].length)
+    .getRange(lastRow ? lastRow + 1 : 1, 1, data.length, data[0].length)
     .setValues(data);
-  return success;
 };

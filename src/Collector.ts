@@ -4,14 +4,16 @@
  * @param {string} sheetName - Name of the Sheet in Spreadsheet
  *
  * */
-
-const collector = (spreadSheetId: string, sheetName: string): any[] => {
+export const collector = (spreadSheetId: string, sheetName: string): any[] => {
   try {
-    let data = SpreadsheetApp.openById(spreadSheetId)
-      .getSheetByName(sheetName)
-      .getDataRange()
-      .getValues();
-    return data;
+    const sheet =
+      SpreadsheetApp.openById(spreadSheetId).getSheetByName(sheetName);
+    if (sheet != null) {
+      const data = sheet.getDataRange().getValues();
+      return data;
+    } else {
+      return [];
+    }
   } catch (error) {
     return [JSON.stringify(error)];
   }
