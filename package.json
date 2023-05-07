@@ -20,6 +20,7 @@
     "build": "webpack --mode none",
     "push": "clasp push",
     "test": "jest",
+    "docs": "npx typedoc --name DataCollector",
     "deploy": "npm run build && npm run push"
   }
 }
