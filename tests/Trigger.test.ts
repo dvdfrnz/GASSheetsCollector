@@ -1,27 +1,21 @@
 import { toCamelCase } from "../src/Helpers";
 
-describe("Test toCamelCase formatter: ", () => {
-  beforeEach(() => {
-    // Test setup code
+describe("toCamelCase", () => {
+  it("should convert a string to camel case", () => {
+    const input = "SOME_TEST_STRING";
+    const output = toCamelCase(input);
+    expect(output).toBe("someTestString");
   });
 
-  it("No Change", () => {
-    expect(toCamelCase("Some Test String")).toBe("someTestString");
+  it("should handle a string with spaces", () => {
+    const input = "Some Sample String";
+    const output = toCamelCase(input);
+    expect(output).toBe("someSampleString");
   });
 
-  it("Single Word Case", () => {
-    expect(toCamelCase("Another")).toBe("another");
-  });
-
-  it("Multiple Words mixed Case", () => {
-    expect(toCamelCase("lorem Ipsum dolor Sit amet")).toBe(
-      "loremIpsumDolorSitAmet"
-    );
-  });
-
-  it("Multiple Words sames Case", () => {
-    expect(toCamelCase("lorem ipsum dolor sit amet")).toBe(
-      "loremIpsumDolorSitAmet"
-    );
+  it("should handle a string with dashes and underscores", () => {
+    const input = "this-asd_Hello";
+    const output = toCamelCase(input);
+    expect(output).toBe("thisAsdHello");
   });
 });

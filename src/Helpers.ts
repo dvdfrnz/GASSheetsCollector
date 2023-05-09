@@ -4,7 +4,7 @@
  * @return Formatted String
  */
 export const toCamelCase = (str: string): string => {
-  const words = str.split(/[_\s]+/);
+  const words = str.split(/[_\s-]+/);
   const result = words.reduce((acc, word, index) => {
     if (index === 0) {
       acc.push(word.toLowerCase());

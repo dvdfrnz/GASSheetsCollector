@@ -1,13 +1,19 @@
 /**
  * Collector function that returns data range from Spreadsheet
+ * @param {typeof SpreadSheetApp} spreadsheetApp - Pass instance of Spreassheet App
  * @param {string} spreadSheetId - ID of Spreadsheet File
  * @param {string} sheetName - Name of the Sheet in Spreadsheet
- *
+ * *
  * */
-export const collector = (spreadSheetId: string, sheetName: string): any[] => {
+export const collector = (
+  spreadsheetApp: typeof SpreadsheetApp,
+  spreadSheetId: string,
+  sheetName: string
+): any[] => {
   try {
-    const sheet =
-      SpreadsheetApp.openById(spreadSheetId).getSheetByName(sheetName);
+    const sheet = spreadsheetApp
+      .openById(spreadSheetId)
+      .getSheetByName(sheetName);
     if (sheet != null) {
       const data = sheet.getDataRange().getValues();
       return data;
@@ -15,6 +21,6 @@ export const collector = (spreadSheetId: string, sheetName: string): any[] => {
       return [];
     }
   } catch (error) {
-    return [JSON.stringify(error)];
+    return [(error as Error).message];
   }
 };

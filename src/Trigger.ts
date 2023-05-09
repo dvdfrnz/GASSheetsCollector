@@ -11,6 +11,11 @@ export const createTimeTriggerSpecifcDate = (
   hourOfDay: number = 3,
   handlerFunction: string = "main"
 ): object => {
+  SpreadsheetApp.getActiveSpreadsheet().toast(
+    "Running function: trigger",
+    "Status",
+    2
+  );
   if (!checkIfTriggerExists("CLOCK", handlerFunction)) {
     ScriptApp.newTrigger(handlerFunction)
       .timeBased()
